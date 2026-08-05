@@ -53,7 +53,7 @@ export default function ServiceDetail({
                     </p>
                 </div>
 
-                <div className="overflow-hidden rounded-3xl bg-amber-400">
+                <div className="overflow-hidden rounded-3xl ">
                     <div className="relative aspect-[4/3] w-full">
                         <Image
                             src={data.image}

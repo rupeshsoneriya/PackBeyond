@@ -40,6 +40,22 @@ import screenPrinting from "../public/screen-printing-icon.svg";
 import rigidBoxes from "../public/3d-printing-icon.svg";
 import productLabels from "../public/booklet-printing-icon.svg";
 
+import customLabelsStickersIcons from "../public/ServicesImage/icon-01.png"
+import packagingDesignIcons from "../public/ServicesImage/icon-06.png"
+import monoCartonsIcons from "../public/ServicesImage/icon-03.png"
+import corrugatedBoxesIcons from "../public/ServicesImage/icon-04.png"
+import rigidBoxesIcons from "../public/ServicesImage/icon-05.png"
+
+import process1 from '../public/processIcons/PROCESS - LINE ART-01.png'
+import process2 from '../public/processIcons/PROCESS - LINE ART-02.png'
+import process3 from '../public/processIcons/PROCESS - LINE ART-03.png'
+import process4 from '../public/processIcons/PROCESS - LINE ART-04.png'
+import process5 from '../public/processIcons/PROCESS - LINE ART-05.png'
+import process6 from '../public/processIcons/PROCESS - LINE ART-06.png'
+
+
+export const processIcons = [process1, process2, process3, process4, process5, process6];
+
 export const navigationLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
@@ -69,22 +85,36 @@ export const featuredServices = [
 
 export const howItWorksSteps = [
   {
-    n: "1",
-    title: "Customize your packaging",
-    desc: "Lorem ipsum dolor sit amet secturer adipiscing elit egestas.",
+    n: "01",
+    title: "Requirement Discussion",
+    // desc: "Understand your packaging needs, product details, quantity, and branding goals.",
   },
   {
-    n: "2",
-    title: "Set up shipping instructions",
-    desc: "Lorem ipsum dolor sit amet secturer adipiscing elit egestas.",
+    n: "02",
+    title: "Packaging Design",
+    // desc: "Create custom packaging designs with the right size, materials, and branding elements.",
   },
   {
-    n: "3",
-    title: "Get your products",
-    desc: "Lorem ipsum dolor sit amet secturer adipiscing elit egestas.",
+    n: "03",
+    title: "Sample Approval",
+    // desc: "Share a sample or digital proof for your review and approval before production.",
+  },
+  {
+    n: "04",
+    title: "Production",
+    // desc: "Begin manufacturing using premium materials and advanced printing technology.",
+  },
+  {
+    n: "05",
+    title: "Quality Inspection",
+    // desc: "Perform thorough quality checks to ensure every product meets our standards.",
+  },
+  {
+    n: "06",
+    title: "Delivery",
+    // desc: "Carefully pack and deliver your finished packaging safely and on schedule.",
   },
 ];
-
 export const testimonials = [
   {
     name: "Lilly Carter",
@@ -277,9 +307,9 @@ export const aboutValues = [
 
 export const servicesData = [
   {
-    slug: "product-labels",
-    icon: productLabels,
-    image: "/images/services/product-labels/hero.webp",
+    slug: "custom-labels-and-stickers",
+    icon: customLabelsStickersIcons,
+    image: customLabelsStickersIcons,
     gallery: [
       "/images/services/product-labels/gallery-1.webp",
       "/images/services/product-labels/gallery-2.webp",
@@ -288,7 +318,7 @@ export const servicesData = [
       "/images/services/product-labels/gallery-5.webp",
       "/images/services/product-labels/gallery-6.webp",
     ],
-    title: "Product Labels",
+    title: "Custom Labels and Stickers",
     shortDescription:
       "Custom-printed product labels that combine sharp branding, durable materials, and precise finishing — from bottles and jars to boxes and pouches.",
     about: {
@@ -428,8 +458,8 @@ export const servicesData = [
 
   {
     slug: "mono-cartons",
-    icon: monoCartons, // ⚠️ rename this import to match — was `sampling`
-    image: "/images/services/mono-cartons/hero.webp",
+    icon: monoCartonsIcons, // ⚠️ rename this import to match — was `sampling`
+    image: monoCartonsIcons,
     gallery: [
       "/images/services/mono-cartons/gallery-1.webp",
       "/images/services/mono-cartons/gallery-2.webp",
@@ -578,8 +608,8 @@ export const servicesData = [
 
   {
     slug: "corrugated-boxes",
-    icon: corrugatedBoxes, // ⚠️ rename this import to match — was `prototyping`
-    image: "/images/services/corrugated-boxes/hero.webp",
+    icon: corrugatedBoxesIcons, 
+    image: corrugatedBoxesIcons,
     gallery: [
       "/images/services/corrugated-boxes/gallery-1.webp",
       "/images/services/corrugated-boxes/gallery-2.webp",
@@ -728,8 +758,8 @@ export const servicesData = [
 
   {
     slug: "rigid-boxes",
-    icon: rigidBoxes, // ⚠️ rename this import to match — was `largeFormatPrinting`
-    image: "/images/services/rigid-boxes/hero.webp",
+    icon: rigidBoxesIcons, // ⚠️ rename this import to match — was `largeFormatPrinting`
+    image: rigidBoxesIcons,
     gallery: [
       "/images/services/rigid-boxes/gallery-1.webp",
       "/images/services/rigid-boxes/gallery-2.webp",
@@ -878,9 +908,8 @@ export const servicesData = [
 
   {
     slug: "packaging-design",
-    icon: packagingDesignService,
-    image:
-      "https://cdn.prod.website-files.com/65eb48eda0059bb8e4c1a2b1/65f3027002e685fda9f269b8_packagin-design-featured-image-print-x-webflow-template.png",
+    icon: packagingDesignIcons,
+    image:packagingDesignIcons,
     gallery: [
       "https://cdn.prod.website-files.com/65eb48eda0059bb8e4c1a2b1/65f30c1fe090d9e0441a6839_packagin-design-gallery-image-01-print-x-webflow-template.jpg",
       "https://cdn.prod.website-files.com/65eb48eda0059bb8e4c1a2b1/65f30c227b54c1b6d59b3d18_packagin-design-gallery-image-02-print-x-webflow-template.jpg",
@@ -1501,6 +1530,12 @@ export const galleryCategories = [
     description:
       "Boxes, labels, pouches, cartons, sleeves, and custom packaging projects.",
   },
+  {
+  slug: "trusted-brands",
+  title: "Our clients/ Trusted Brands",
+  description:
+    "We're proud to partner with leading brands across industries, delivering premium packaging and printing solutions they trust.",
+},
   {
     slug: "our-work",
     title: "Our Work",

@@ -8,8 +8,10 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  console.log(slug,'params');
+  
 
-  const data = servicesData.find((item) => item.slug === slug);
+  const data = servicesData.find((item) => item?.slug === slug);
 
   if (!data) {
     notFound();

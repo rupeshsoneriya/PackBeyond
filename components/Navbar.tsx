@@ -10,16 +10,19 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto flex h-20 max-w-[1300px] items-center justify-between px-6 md:px-8">
-        <div className="flex items-center gap-10">
+    <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <div className="mx-auto flex h-16 max-w-[1300px] items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
+        {/* Left */}
+        <div className="flex items-center gap-6 lg:gap-10">
           <Logo />
-          <nav className="hidden items-center gap-7 text-[15px] text-black/80 lg:flex">
+
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
             {navigationLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-black"
+                className="text-[15px] font-medium text-black/80 transition-colors hover:text-black"
               >
                 {link.label}
               </Link>
@@ -27,45 +30,71 @@ export default function Navbar() {
           </nav>
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        {/* Right Side */}
+        <div className="hidden lg:flex items-center gap-3">
           <button
             aria-label="Search"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 transition-colors hover:bg-black/5"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 transition hover:bg-black/5"
           >
-            <Search size={16} />
+            <Search size={18} />
           </button>
+
           <Link
             href="/contact"
-            className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-black/85"
+            className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-black/80"
           >
             Get in touch
           </Link>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
-          onClick={() => setOpen((value) => !value)}
+          className="flex items-center justify-center lg:hidden"
+          onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {open && (
-        <div className="flex flex-col gap-4 border-t border-black/10 px-6 py-4 text-black/80 md:hidden">
-          {navigationLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            className="rounded-full bg-black px-5 py-3 text-center text-sm font-medium text-white"
-          >
-            Get in touch
-          </Link>
+      {/* Mobile Menu */}
+      <div
+        className={`overflow-hidden transition-all duration-300 lg:hidden ${
+          open ? "max-h-[500px]" : "max-h-0"
+        }`}
+      >
+        <div className="border-t border-black/10 bg-white px-6 py-5">
+          <nav className="flex flex-col gap-5">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-[16px] font-medium text-black/80 hover:text-black"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                aria-label="Search"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15"
+              >
+                <Search size={18} />
+              </button>
+
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="flex-1 rounded-full bg-black py-3 text-center text-sm font-medium text-white"
+              >
+                Get in touch
+              </Link>
+            </div>
+          </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -12,12 +12,14 @@ export default function Logo() {
         />
       </span>
       <span className="flex flex-col leading-none">
-        <span className="text-lg font-black tracking-tight text-slate-900">
-          Pack Beyond
-        </span>
-        <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-orange-500">
+     <span
+  className="font-kanit text-[28px] font-normal tracking-tight text-[#EB7827]"
+>
+  Pack Beyond
+</span>
+        {/* <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-orange-500">
           Packaging Studio
-        </span>
+        </span> */}
       </span>
     </Link>
   );

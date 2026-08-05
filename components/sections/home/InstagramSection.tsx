@@ -8,7 +8,7 @@ export default function InstagramSection() {
       <div className="flex items-end justify-between mb-8">
         <h2 className="text-3xl md:text-4xl font-bold">Follow us on Instagram</h2>
         <Link
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/packbeyond?igsh=MXV3ZWw4amFkaXV5Zg=="
           target="_blank"
           className="
     inline-flex

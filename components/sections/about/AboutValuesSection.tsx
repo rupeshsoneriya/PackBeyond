@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { aboutValues } from "@/lib/content";
+import { aboutValues,processIcons } from "@/lib/content";
 
 export default function AboutValuesSection() {
   return (
@@ -72,7 +72,7 @@ export default function AboutValuesSection() {
             {/* Vertical Line */}
 
             <div className="absolute left-[27px] top-0 h-full w-[2px] bg-[#ececec]" />
-
+{/* 
             <div className="space-y-10">
 
               {aboutValues.map(({ icon: Icon, title, desc }, index) => (
@@ -89,7 +89,7 @@ export default function AboutValuesSection() {
                   className="relative flex gap-6 group"
                 >
 
-                  {/* Circle */}
+               
 
                   <div className="relative z-20 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#ff6b35] shadow-lg transition-all duration-300 group-hover:scale-110">
 
@@ -97,7 +97,54 @@ export default function AboutValuesSection() {
 
                   </div>
 
-                  {/* Content */}
+
+                  <div className="pb-10">
+
+                    <span className="font-montserrat text-[#ff6b35] font-bold text-sm tracking-widest">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <h3 className="mt-2 font-montserrat text-[26px] font-bold text-[#1e1e24]">
+                      {title}
+                    </h3>
+
+                    <p className="mt-3 font-kanit text-[17px] leading-8 text-[#4c4c5c]">
+                      {desc}
+                    </p>
+
+                  </div>
+
+                </motion.div>
+
+              ))}
+
+            </div> */}
+ 
+ 
+            <div className="space-y-10">
+
+              {aboutValues.map(({ icon: Icon, title, desc }, index) => (
+
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * .15,
+                    duration: .6
+                  }}
+                  className="relative flex gap-6 group"
+                >
+
+               
+
+                  <div className="relative z-20 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#ff6b35] shadow-lg transition-all duration-300 group-hover:scale-110">
+
+                    <Icon size={24} className="text-white" />
+
+                  </div>
+
 
                   <div className="pb-10">
 
@@ -120,7 +167,6 @@ export default function AboutValuesSection() {
               ))}
 
             </div>
-
           </div>
 
         </div>
