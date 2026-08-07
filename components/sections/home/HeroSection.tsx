@@ -5,7 +5,7 @@ import type { ComponentType } from "react";
 import { heroBadges } from "@/lib/content";
 
 import rightBoxImage from "../../../public/Hero-section.png";
-import BottomImage from "../../../public/Hero-section-Hello-image.png";
+import BottomImage from "../../../public/transperent-logo.png";
 import SectionBackgroundImage from "../../../public/Hero-section-bg.jpeg";
 
 export default function HeroSection() {
@@ -105,7 +105,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Decoration */}
-      <div className="absolute left-[30px] top-[-135px] hidden lg:block h-[330px] w-[330px] -rotate-6">
+      <div className="absolute left-[0px] top-[-135px] hidden lg:block h-[330px] w-[330px] -rotate-6">
         <Image
           src={BottomImage}
           alt="Decoration"
