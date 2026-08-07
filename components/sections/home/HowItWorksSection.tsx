@@ -56,13 +56,13 @@ export default function HowItWorksSection() {
                                     >
                                         {step.title}
                                     </h3>
-
+{/* 
                                     <p
                                         className="font-kanit font-normal leading-[1.25] text-[#4C4C5C]"
                                         style={{ fontSize: "14px" }}
                                     >
                                         {step.desc}
-                                    </p>
+                                    </p> */}
                                 </div>
                             </div>
                         ))}
